@@ -19,13 +19,13 @@
 </div>
 
 
-<div class="w-full py-24 flex justify-center">
+<div class="w-full py-24 flex justify-center dark:bg-gray-800 dark:text-white">
     <div class=" w-3/5 text-justify">
         Lazada's constantly evolving technology, logistics and payments infrastructure connects this vast and diverse region, and offers Southeast Asia a shopping experience that is safe, seamless and enjoyable. At Lazada, nothing stands still. As the demands of discerning shoppers and ambitious retailers continue to grow, we’re always a few steps ahead.
     </div>
 </div>
 
-<div class="w-full ">
+<div class="w-full dark:bg-gray-800 ">
     <h1 class="mb-16 tracking-tight text-white text-3xl sm:ms-32 text-center sm:inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold p-2">Our Core Pillars</h1>
     <div class="grid grid-cols-1 lg:grid-cols-3 flex justify-items-center">
 
@@ -76,12 +76,12 @@
     </div>
 </div>
 
-<div class="w-full h-screen lg:block hidden" style="background: linear-gradient(to right, white 25%, white 37%, #D3003E 37%, #D3003E 75%);">
-    <div class="grid grid-cols-10 h-screen lg:absolute items-center">
-        <div class="col-span-10 lg:col-start-2 lg:col-span-4 justify-center flex">
+<div class="w-full h-screen lg:block hidden bg-custom-gradient dark:bg-custom-gradient-dark">
+    <div class="grid grid-cols-10 h-screen lg:absolute items-center ">
+        <div class="col-span-10 lg:col-start-2 lg:col-span-4 justify-center flex ">
             <img src="https://lazada-com.oss-ap-southeast-1.aliyuncs.com/11-lazada_business.jpg" class="h-72">
         </div>
-        <div class="ms-8 lg:col-span-4 col-span-8 text-justify">
+        <div class="ms-8 lg:col-span-4 col-span-8 text-justify ">
             <p class="mb-16 tracking-tight text-3xl text-center inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold p-2">Our Business</p>
             <p class="mb-8 tracking-tight ms-3 text-xl text-white font-bold">Cross-Border</p>
             <p class="mb-16 tracking-tight ms-3 text-md text-white ">With a mission to bring the world to Southeast Asia and provide a gateway for Southeast Asian brands to reach international consumers, Lazada’s cross-border business features homegrown brands and sellers from markets that include China, Hong Kong SAR, Korea, Japan, the United States, and Europe. Through our Global Collection channel, Lazada offers a wide assortment of products across various categories, including fashion, electronics, and sports and outdoors. Alibaba’s technology infrastructure and unrivalled logistics network gets purchases to customers within seven days of placing an order.
