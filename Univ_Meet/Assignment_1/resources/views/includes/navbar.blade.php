@@ -1,6 +1,6 @@
 <nav class="bg-slate-100 border-gray-200 dark:bg-gray-900 ">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 ">
-        <div class="w-full max-w-screen-xl justify-between grid grid-cols-3">
+        <div class="w-full max-w-screen-xl justify-between grid grid-cols-3 items-center">
             <div class="flex items-center rtl:space-x-reverse">
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('assets/logo.webp') }}" class="size-16" alt="description of myimage">
@@ -22,7 +22,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="items-center justify-end w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+            <div class=" ms-5 items-center justify-end w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                 <label class="inline-flex items-center cursor-pointer">
                     <input type="checkbox" id="theme" class="sr-only peer">
                     <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
