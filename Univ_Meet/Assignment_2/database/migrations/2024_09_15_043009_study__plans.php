@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id('ID');
-            $table->foreign('studentID')->references('students')->on('ID');
-            $table->foreign('courseID')->references('courses')->on('ID');
-            $table->string('period',6);
+            $table->unsignedBigInteger('students_id');
+            $table->unsignedBigInteger('courses_id');
+            $table->foreign('students_ID')->references('ID')->on('students');
+            $table->foreign('courses_ID')->references('ID')->on('courses');
+            $table->string('period', 6);
             $table->boolean('isCancel')->default(false);
             $table->float('grade')->default(0);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

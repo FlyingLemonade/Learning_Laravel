@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('courseName');
             $table->string('courseNameEN');
             $table->tinyInteger('creditUnit');
-            $table->foreign('unitID')->references('ID')->on('units');
+            $table->unsignedBigInteger('units_ID');
+            $table->foreign('units_ID')->references('ID')->on('units');
             $table->boolean('isActive')->default(true);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

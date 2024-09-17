@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->tinyInteger('unitLevel');
             $table->boolean('isActive');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

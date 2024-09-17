@@ -4,11 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Students extends Model
 {
     use HasFactory;
-    protected $primrayKey = 'ID';
+    public function unit(): BelongsTo
+    {
+        return $this->belongsTo(Units::class);
+    }
+
+    public function studyplan(): HasMany
+    {
+        return $this->hasMany(Study_Plans::class, 'student_id');
+    }
+
+    protected $primaryKey = 'ID';
     protected $keyType = 'string';
     protected $table = 'students';
     protected $fillable = [

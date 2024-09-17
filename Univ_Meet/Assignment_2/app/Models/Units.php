@@ -4,11 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+
 
 class Units extends Model
 {
     use HasFactory;
-    protected $primrayKey = 'ID';
+
+
+
+
+
+    protected $primaryKey = 'ID';
     protected $table = 'units';
     protected $fillable = [
         'name',
@@ -27,4 +35,14 @@ class Units extends Model
         'updatedAt' => 'required|timestamp',
 
     ];
+
+    public function students(): HasMany
+    {
+        return $this->hasMany(Students::class, 'unit_ID');
+    }
+
+    public function courses(): HasMany
+    {
+        return $this->hasMany(Courses::class, 'unit_ID');
+    }
 }
