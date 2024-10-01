@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Courses extends Model
 {
@@ -20,6 +20,18 @@ class Courses extends Model
     public function studyPlans(): HasMany
     {
         return $this->hasMany(Study_Plans::class, 'course_id');
+    }
+
+    public function students(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Students::class,
+            Study_Plans::class,
+            'ID',
+            'ID',
+            'sekoci',
+            'student_id'
+        );
     }
 
     protected $primaryKey = 'ID';
