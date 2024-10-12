@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Movie;
+use Illuminate\Http\Request;
+
+class MovieController extends Controller
+{
+    public function show(Movie $movie)
+    {
+        
+        $movies = $movie::all();
+        return view( 'listFilm',['movies' => $movies]);
+    }
+
+    public function toForm(Movie $movie){
+        $movieId = $movie->id;
+        $movieDetail = $movie::find($movieId);
+        return view('bookTicket',['movie' => $movieDetail]);
+
+    }
+
+    public function showTicket(Movie $movie)
+    {
+
+        $tickets = $movie->tickets()->get();
+    
+        return view('listTicket', ['tickets' => $tickets, 'movies' => $movie]);
+    }
+
+
+
+}
