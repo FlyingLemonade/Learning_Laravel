@@ -25,9 +25,7 @@ class TicketController extends Controller
             'seat_number' => $validated['seat_number']
 
         ]);
-
-       
-        return redirect()->route('movie')->with('success', 'Ticket ordered successfully!');
+        return response()->json(['success' => true, 'message' => 'Ticket created']);
     }
 
     public function checkIn(Ticket $ticket){
@@ -36,18 +34,25 @@ class TicketController extends Controller
             'is_checked_in' => true,  
             'check_in_time' => now()
         ]);
-        return redirect()->route('movie');
-        
+        if (request()->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Checked in successfully']);
+        }
+            
     }
 
     public function delete(Ticket $ticket){
 
         if($ticket['is_checked_in'] == false){
             $ticket->delete();
+            if (request()->ajax()) {
+                return response()->json(['success' => true, 'message' => 'Ticket deleted successfully']);
+            }
         }
         
-        return redirect()->route('movie');
-        
+
+        if (request()->ajax()) {
+            return response()->json(['success' => false, 'message' => 'Cannot delete a checked-in ticket']);
+        }
     }
 
 }

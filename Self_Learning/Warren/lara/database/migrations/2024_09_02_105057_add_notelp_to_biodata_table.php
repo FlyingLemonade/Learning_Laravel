@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::table('biodata', function (Blueprint $table) {
             $table->string('notelp', 15)->nullable()->after('alamat');
         });
+        // Schema::table('your_table_name', function (Blueprint $table) {
+        //     $table->unsignedBigInteger('foreign_key_column'); // Add the new column
+        //     $table->foreign('foreign_key_column')->references('id')->on('other_table')->onDelete('cascade'); // Add the foreign key constraint
+        // });
     }
 
     /**

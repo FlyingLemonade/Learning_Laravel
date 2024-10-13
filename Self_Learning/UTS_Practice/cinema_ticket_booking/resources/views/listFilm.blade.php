@@ -30,10 +30,53 @@
         
         @endforeach
     </tbody>
+    
 </table>
 
 
 
+<script>
+    $(document).ready(function(){
+        $(document).on('submit', '#delForm', function (e) {
+        e.preventDefault(); 
 
+        let form = $(this);
+        let ticketId = form.attr('data-value');
+        let route = 'http://127.0.0.1:8000/ticket/delete/';
+        let url = route +ticketId;
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: form.serialize(), 
+            success: function (response) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Ticket deleted successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        confirmButton: 'bg-indigo-400'
+                    }
+                }).then(() => {
+                    location.reload(); 
+                });
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to delete the ticket. Please try again.',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        confirmButton: 'bg-indigo-400'
+                    }
+                });
+            }
+        });
+    });
+});
+
+</script>
 
 @endsection
